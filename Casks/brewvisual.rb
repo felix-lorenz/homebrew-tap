@@ -4,11 +4,11 @@ cask "brewvisual" do
 
   url "https://github.com/felix-lorenz/brewvisual-releases/releases/download/v#{version}/BrewVisual-#{version}.zip"
   name "BrewVisual"
-  desc "Visual interface for Homebrew on macOS"
+  desc "Graphical interface for Homebrew packages"
   homepage "https://github.com/felix-lorenz/brewvisual-releases"
 
-  depends_on macos: :golden_gate
   depends_on arch: :arm64
+  depends_on macos: :golden_gate
 
   app "BrewVisual.app"
 end

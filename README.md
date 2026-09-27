@@ -1,12 +1,11 @@
 # Homebrew Tap for BrewVisual
 
-Private staging tap for the `brewvisual` cask.
+This tap distributes the Developer ID-signed and notarized BrewVisual app. The first release supports Apple Silicon on macOS 27 or later and requires an existing Homebrew installation.
 
-The cask will be added at `Casks/brewvisual.rb` after a signed and notarized `BrewVisual-<version>.zip` exists in `felix-lorenz/brewvisual-releases`. Its URL and SHA-256 must match that exact artifact. This repository remains private until product acceptance is complete.
-
-The eventual public installation flow is:
+Install from the public tap with:
 
 ```sh
-brew tap felix-lorenz/tap
-brew install --cask brewvisual
+brew install --cask felix-lorenz/tap/brewvisual
 ```
+
+The Cask downloads an immutable, versioned release archive from [BrewVisual Releases](https://github.com/felix-lorenz/brewvisual-releases) and checks its SHA-256. Keep the Cask version and checksum in sync with the published archive.

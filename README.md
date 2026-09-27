@@ -8,4 +8,4 @@ Install from the public tap with:
 brew install --cask felix-lorenz/tap/brewvisual
 ```
 
-The Cask downloads an immutable, versioned release archive from [BrewVisual Releases](https://github.com/felix-lorenz/brewvisual-releases) and checks its SHA-256. Keep the Cask version and checksum in sync with the published archive.
+The Cask downloads a versioned release archive from [BrewVisual Releases](https://github.com/felix-lorenz/brewvisual-releases) and checks its SHA-256. Keep the Cask version and checksum in sync with the published archive.

@@ -1,11 +1,39 @@
-# Homebrew Tap for BrewVisual
+# Homebrew Tap
 
-This tap distributes the Developer ID-signed and notarized BrewVisual app. The first release supports Apple Silicon on macOS 27 or later and requires an existing Homebrew installation.
+A collection of tools and applications distributed through Homebrew.
 
-Install from the public tap with:
+## Add the tap
+
+Install [Homebrew](https://brew.sh) first, then add this tap:
 
 ```sh
-brew install --cask felix-lorenz/tap/brewvisual
+brew tap felix-lorenz/tap
 ```
 
-The Cask downloads a versioned release archive from [BrewVisual Releases](https://github.com/felix-lorenz/brewvisual-releases) and checks its SHA-256. Keep the Cask version and checksum in sync with the published archive.
+Adding the tap makes its packages available; it does not install them. Choose a tool below and use its installation command.
+
+## Available tools
+
+| Tool | Description | Requirements | Install |
+| --- | --- | --- | --- |
+| [BrewVisual](https://github.com/felix-lorenz/brewvisual-releases) | Native macOS interface for managing Homebrew packages and taps | macOS 27 or later, Apple Silicon (arm64), Homebrew | `brew install --cask felix-lorenz/tap/brewvisual` |
+
+Requirements are specific to each tool. Follow the linked product documentation for features, downloads, and setup guidance.
+
+## Update a tool
+
+Refresh the tap and Homebrew metadata:
+
+```sh
+brew update
+```
+
+Then upgrade the tool you want to update. For BrewVisual, quit the app when no Homebrew command is running and use:
+
+```sh
+brew upgrade --cask felix-lorenz/tap/brewvisual
+```
+
+## Support
+
+For product questions, bugs, and feature requests, use the support links in the tool's documentation. For problems with a formula or cask in this tap, open a [tap issue](https://github.com/felix-lorenz/homebrew-tap/issues) and include the affected tool, your operating system, Homebrew version, and command output.

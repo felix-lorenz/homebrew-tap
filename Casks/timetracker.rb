@@ -1,6 +1,6 @@
 cask "timetracker" do
-  version "0.2.0"
-  sha256 "1cb703138439af71b980f09e777c637286bf4daf71889b1a6532b861b013b02d"
+  version "0.3.0"
+  sha256 "8a37a10e3bc8a21eba9f93aa4d4c6fd5e11cb62680a09ceeb7bdcb79a336a9ca"
 
   url "https://github.com/felix-lorenz/timetracker-releases/releases/download/v#{version}/TimeTracker-#{version}.zip"
   name "Time Tracker"
@@ -8,7 +8,7 @@ cask "timetracker" do
   homepage "https://github.com/felix-lorenz/timetracker-releases"
 
   depends_on arch: :arm64
-  depends_on macos: :sonoma
+  depends_on macos: :golden_gate
 
   app "Time Tracker.app"
 end

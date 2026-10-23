@@ -1,6 +1,6 @@
 cask "timetracker" do
-  version "0.15.1"
-  sha256 "af5197aa70288b2ad07ed680450d4cbd04775988f66faa28032142bae4f8ce33"
+  version "0.15.2"
+  sha256 "35c8cbabe10e255a0bdcf714ffefe9f63018502662db81c8c132962b73e7f777"
 
   url "https://github.com/felix-lorenz/timetracker-releases/releases/download/v#{version}/TimeTracker-#{version}.zip"
   name "Time Tracker"

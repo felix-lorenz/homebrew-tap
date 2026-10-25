@@ -4,7 +4,7 @@ cask "brewvisual" do
 
   url "https://github.com/felix-lorenz/brewvisual/releases/download/v#{version}/BrewVisual-#{version}.zip"
   name "BrewVisual"
-  desc "Native interface for Homebrew packages and taps"
+  desc "Graphical interface for Homebrew packages"
   homepage "https://github.com/felix-lorenz/brewvisual"
 
   depends_on arch: :arm64

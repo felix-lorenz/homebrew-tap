@@ -25,6 +25,7 @@ jobs:
     env:
       HOMEBREW_NO_ANALYTICS: "1"
       HOMEBREW_NO_AUTO_UPDATE: "1"
+      BREWVISUAL_CASK: felix-lorenz/tap/brewvisual
     steps:
       - name: Set up stable Homebrew and check out this revision
         id: homebrew
@@ -43,22 +44,14 @@ jobs:
           done
 
       - name: Trust the BrewVisual Cask for checks
-        env:
-          BREWVISUAL_CASK: ${{ steps.homebrew.outputs.tap-name }}/brewvisual
         run: brew trust --cask "$BREWVISUAL_CASK"
 
       - name: Check BrewVisual Cask style
-        env:
-          BREWVISUAL_CASK: ${{ steps.homebrew.outputs.tap-name }}/brewvisual
         run: brew style --cask "$BREWVISUAL_CASK"
 
       - name: Audit BrewVisual metadata and public download
-        env:
-          BREWVISUAL_CASK: ${{ steps.homebrew.outputs.tap-name }}/brewvisual
         # Audit metadata for the app's minimum OS without installing or running it.
         run: brew audit --cask --strict --online --os=golden_gate "$BREWVISUAL_CASK"
 
       - name: Verify the public BrewVisual archive checksum
-        env:
-          BREWVISUAL_CASK: ${{ steps.homebrew.outputs.tap-name }}/brewvisual
         run: brew fetch --cask "$BREWVISUAL_CASK"

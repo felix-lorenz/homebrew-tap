@@ -1,0 +1,57 @@
+name: Tap CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  brewvisual:
+    name: Validate BrewVisual Cask
+    runs-on: macos-26
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      HOMEBREW_NO_ANALYTICS: "1"
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      BREWVISUAL_CASK: felix-lorenz/tap/brewvisual
+    steps:
+      - name: Set up stable Homebrew and check out this revision
+        id: homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        with:
+          stable: true
+          brew-gh-api-token: ""
+
+      - name: Verify the checked-out revision
+        run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+
+      - name: Check Ruby syntax
+        run: |
+          for file in Casks/*.rb lib/*.rb; do
+            ruby -c "$file"
+          done
+
+      - name: Trust the BrewVisual Cask for checks
+        run: brew trust --cask "$BREWVISUAL_CASK"
+
+      - name: Check BrewVisual Cask style
+        run: brew style --cask "$BREWVISUAL_CASK"
+
+      - name: Audit BrewVisual metadata and public download
+        # Audit metadata for the app's minimum OS without installing or running it.
+        run: brew audit --cask --strict --online --os=golden_gate "$BREWVISUAL_CASK"
+
+      - name: Verify the public BrewVisual archive checksum
+        run: brew fetch --cask "$BREWVISUAL_CASK"

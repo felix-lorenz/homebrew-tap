@@ -50,7 +50,10 @@ jobs:
         run: brew style --cask "$BREWVISUAL_CASK"
 
       - name: Audit BrewVisual metadata and public download
-        # Audit metadata for the app's minimum OS without installing or running it.
+        # Authenticate metadata requests with the job's read-only token.
+        # The separate archive fetch below remains anonymous.
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: brew audit --cask --strict --online --os=golden_gate "$BREWVISUAL_CASK"
 
       - name: Verify the public BrewVisual archive checksum

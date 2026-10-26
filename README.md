@@ -1,6 +1,6 @@
 # Homebrew Tap
 
-A Homebrew tap for BrewVisual and Time Tracker.
+A Homebrew tap for BrewVisual.
 
 ## Install an app
 
@@ -14,18 +14,6 @@ Install [Homebrew](https://brew.sh) first, then use the command for the app you 
 
 ```sh
 brew install --cask felix-lorenz/tap/brewvisual
-```
-
-### Time Tracker
-
-[Time Tracker](https://github.com/felix-lorenz/timetracker-releases) is a native macOS time tracker with a weekly calendar and menu bar capture.
-
-**Requirements:** macOS 27 or later, Apple Silicon (arm64), and Homebrew for Cask installation.
-
-Time Tracker uses private release downloads and also requires a download token. Follow its product documentation for access and setup.
-
-```sh
-brew install --cask felix-lorenz/tap/timetracker
 ```
 
 ## Add the tap separately (optional)
@@ -51,14 +39,6 @@ Then run the command for the app you want to update. Quit BrewVisual when no Hom
 ```sh
 brew upgrade --cask felix-lorenz/tap/brewvisual
 ```
-
-For Time Tracker, quit the app before upgrading:
-
-```sh
-brew upgrade --cask felix-lorenz/tap/timetracker
-```
-
-Quitting Time Tracker does not stop an active timer. Stop it first if you want tracking to end. Upgrades preserve tracking records and the Tempo import journal.
 
 ## Support
 

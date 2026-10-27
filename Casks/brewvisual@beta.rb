@@ -1,6 +1,6 @@
 cask "brewvisual@beta" do
-  version "0.16.0-beta.1"
-  sha256 "591f6ac7cb911bd151161f42663d5c761c3f8c218a5205f99b7ea4cd9edcba67"
+  version "0.16.0-beta.2"
+  sha256 "53b8f772f8a1de5681cd9587d4abb79796e66db6cabb2b01b18884f7f01db94a"
 
   url "https://github.com/felix-lorenz/brewvisual/releases/download/v#{version}/BrewVisual-#{version}.zip"
   name "BrewVisual"
@@ -21,7 +21,7 @@ cask "brewvisual@beta" do
 
   conflicts_with cask: "brewvisual"
   depends_on arch: :arm64
-  depends_on macos: :golden_gate
+  depends_on macos: :tahoe
 
   app "BrewVisual.app"
 

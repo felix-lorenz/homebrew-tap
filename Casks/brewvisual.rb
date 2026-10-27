@@ -7,6 +7,7 @@ cask "brewvisual" do
   desc "Graphical interface for Homebrew packages"
   homepage "https://github.com/felix-lorenz/brewvisual"
 
+  conflicts_with cask: "brewvisual@beta"
   depends_on arch: :arm64
   depends_on macos: :golden_gate
 

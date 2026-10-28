@@ -5,7 +5,7 @@ cask "brewvisual@beta" do
   url "https://github.com/felix-lorenz/brewvisual/releases/download/v#{version}/BrewVisual-#{version}.zip"
   name "BrewVisual"
   desc "Graphical interface for Homebrew packages"
-  homepage "https://github.com/felix-lorenz/brewvisual"
+  homepage "https://brewvisual.app/"
 
   livecheck do
     url :url

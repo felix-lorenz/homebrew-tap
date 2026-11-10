@@ -10,7 +10,7 @@ Install [Homebrew](https://brew.sh) first, then use the command for the app you 
 
 [BrewVisual](https://github.com/felix-lorenz/brewvisual) is a native macOS interface for managing Homebrew packages and taps.
 
-**Requirements:** macOS 27 or later, Apple Silicon (arm64), and Homebrew.
+**Requirements:** macOS 26 or later, Apple Silicon (arm64), and Homebrew.
 
 ```sh
 brew install --cask felix-lorenz/tap/brewvisual

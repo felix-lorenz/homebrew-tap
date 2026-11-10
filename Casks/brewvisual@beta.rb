@@ -1,6 +1,6 @@
 cask "brewvisual@beta" do
-  version "0.17.0-beta.9"
-  sha256 "d11face88a8d516b8f277ddf18c95b772e68a7f5cbf4726e62ddd07bd2de8f75"
+  version "0.17.0"
+  sha256 "b85d5c973d5ea4b3fb382f779c9fcf6e24d85eed5a325ef7fdbdbf43d8c63f61"
 
   url "https://github.com/felix-lorenz/brewvisual/releases/download/v#{version}/BrewVisual-#{version}.zip"
   name "BrewVisual"
